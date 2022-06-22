@@ -6,7 +6,7 @@ export function TodoMain(props) {
 	const [todos, setTodos] = useState([]);
 
 	function createTask(task) {
-		const newTodos = [... todos, { task }];
+		const newTodos = [...todos, { task }];
 
 		setTodos(newTodos);
 
@@ -14,13 +14,13 @@ export function TodoMain(props) {
 	}
 
 	function deleteTask(index) {
-		const newTodos = [... todos];
+		const newTodos = [...todos];
 		newTodos.splice(index, 1);
 		setTodos(newTodos);
 	}
 
 	return <>
 		<TodoTitle />
-		<TodoForm props={props} todos={[... todos]} createTask={createTask} deleteTask={deleteTask} />
+		<TodoForm props={props} todos={[...todos]} createTask={createTask} deleteTask={deleteTask} />
 	</>
 }
